@@ -7,7 +7,7 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     height: 100vh;
     overflow: auto; /* Ensure the page is scrollable if necessary */
     background: #f3f3f3;
@@ -164,7 +164,7 @@ button:hover {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media only screen and (max-width: 1125px) and (max-height: 2001px) {
     body {
         align-items: flex-start;
     }
