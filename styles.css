@@ -69,62 +69,47 @@ label {
     margin-top: 10px;
     font-size: 1em;
     color: #333;
-    align-self: flex-start;
+    align-self: flex-start; /* Align labels to the start */
 }
 
 input, textarea {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
     margin-top: 5px;
-    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
 }
 
+textarea {
+    resize: vertical; /* Allows vertical resizing */
+}
+
 button {
+    margin-top: 20px;
     padding: 10px 20px;
-    background-color: #00b3b3; /* Teal color matching the logo */
-    color: white;
     border: none;
     border-radius: 5px;
+    background-color: #00b7c7; /* Teal color matching the logo */
+    color: white;
     font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #008080; /* Darker teal for hover effect */
+    background-color: #008a9c; /* Slightly darker teal on hover */
 }
 
 #my-form-status {
-    margin-top: 10px;
+    margin-top: 20px;
+    font-size: 1em;
     color: #333;
 }
 
-.social-media {
-    margin-top: 20px;
-}
-
-.social-media a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #00b3b3; /* Teal color matching the logo */
-}
-
-.social-media a:hover {
-    color: #008080; /* Darker teal for hover effect */
-}
-
-@media only screen and (max-width: 600px) {
-    .container {
-        padding: 20px;
-    }
-
-    .logo {
-        max-width: 200px;
-    }
-
+/* Media Queries */
+@media (max-width: 600px) {
     h1 {
         font-size: 2em;
     }
@@ -146,12 +131,45 @@ button:hover {
     }
 
     button {
-        width: 100%;
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 800px;
+        padding: 30px 50px; /* Increased padding on the sides for larger screens */
+        margin-top: 10px; /* Adjusted top margin */
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    .tagline {
+        font-size: 2em;
+    }
+
+    .coming-soon {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1.1em;
     }
 }
 
 @media only screen and (max-width: 1125px) and (max-height: 2001px) {
     body {
         align-items: flex-start;
+    }
+
+    .container {
+        margin-top: 20px; /* Add some top margin for small screens */
     }
 }
