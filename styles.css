@@ -44,11 +44,11 @@ h1 {
     font-size: 1.2em;
     color: #999;
     margin-top: 20px;
-    margin-bottom: 30px; /* Added space between "Coming Soon" and the form */
+    margin-bottom: 20px; /* Added space between "Coming Soon" and the form */
 }
 
 form {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
