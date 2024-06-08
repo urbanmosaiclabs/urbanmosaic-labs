@@ -107,3 +107,57 @@ button:hover {
     font-size: 1em;
     color: #333;
 }
+
+/* Media Queries */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .tagline {
+        font-size: 1.2em;
+    }
+
+    .coming-soon {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    input, textarea {
+        max-width: 100%;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 800px;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    .tagline {
+        font-size: 2em;
+    }
+
+    .coming-soon {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1.1em;
+    }
+}
