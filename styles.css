@@ -12,6 +12,7 @@ body {
     overflow: auto; /* Ensure the page is scrollable if necessary */
     background: #f3f3f3;
     font-family: Arial, sans-serif;
+    padding: 20px; /* Added padding to ensure the content is not cut off */
 }
 
 .container {
@@ -28,6 +29,7 @@ body {
     max-width: 300px;
     height: auto;
     border-radius: 15px; /* Adjust the value as needed */
+    margin-top: 20px; /* Added margin to ensure the entire logo is visible */
 }
 
 h1 {
@@ -40,6 +42,7 @@ h1 {
     font-size: 1.5em;
     color: #666;
     margin-top: 10px;
+    font-style: italic; /* Optional: italicize the tagline for emphasis */
 }
 
 .coming-soon {
