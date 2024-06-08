@@ -111,11 +111,11 @@ button:hover {
     margin: 0 10px;
     text-decoration: none;
     color: #00a6a6;
-    font-size: 1.2em;
+    font-size: 1.5em; /* Adjust font size for visibility */
     transition: color 0.3s;
 }
 
-.social-media a:hover {
+social-media a:hover {
     color: #008f8f;
 }
 
