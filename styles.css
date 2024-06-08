@@ -9,6 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: auto; /* Ensure the page is scrollable if necessary */
     background: #f3f3f3;
     font-family: Arial, sans-serif;
 }
@@ -19,6 +20,8 @@ body {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 90%;
+    margin: 20px; /* Add margin to ensure the content is not cut off on small screens */
 }
 
 .logo {
@@ -43,11 +46,17 @@ h1 {
     font-size: 1.2em;
     color: #999;
     margin-top: 20px;
-    margin-bottom: 20px; /* Added space between "Coming Soon" and the form */
+    margin-bottom: 30px; /* Added space between "Coming Soon" and the form */
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px; /* Space between the heading and form */
 }
 
 form {
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,7 +88,7 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #007BFF;
+    background-color: #00b7c7; /* Teal color matching the logo */
     color: white;
     font-size: 1em;
     cursor: pointer;
@@ -87,7 +96,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #008a9c; /* Slightly darker teal on hover */
 }
 
 #my-form-status {
