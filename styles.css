@@ -17,12 +17,12 @@ body {
 
 .container {
     text-align: center;
-    padding: 20px;
+    padding: 20px 30px; /* Increased padding on the sides */
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     max-width: 90%;
-    margin: 10px; /* Reduced margin */
+    margin: 5px auto; /* Reduced top margin */
 }
 
 .logo {
@@ -139,7 +139,8 @@ button:hover {
 @media (min-width: 1200px) {
     .container {
         max-width: 800px;
-        padding: 30px; /* Increased padding for larger screens */
+        padding: 30px 50px; /* Increased padding on the sides for larger screens */
+        margin-top: 10px; /* Adjusted top margin */
     }
 
     h1 {
