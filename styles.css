@@ -1,175 +1,64 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Cloudflare Turnstile script -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+    <div class="container">
+        <img src="images/logo.webp" alt="UrbanMosaic Labs Logo" class="logo">
+        <h1>UrbanMosaic Labs</h1>
+        <p class="tagline">"Crafting Digital Masterpieces"</p>
+        <p class="coming-soon">Coming Soon</p>
+        <h2>Contact Us</h2>
+        <form id="my-form" action="https://formspree.io/f/mleqyyyq" method="POST">
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            <br>
+            <label>Message:</label>
+            <textarea name="message" rows="4" required></textarea>
+            <br>
+            <!-- Cloudflare Turnstile widget with light theme -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAAcJJeSkSfqQDtCx" data-theme="light"></div>
+            <button id="my-form-button">Submit</button>
+            <p id="my-form-status"></p>
+        </form>
+    </div>
+    <script>
+        var form = document.getElementById("my-form");
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: auto; /* Ensure the page is scrollable if necessary */
-    background: #f3f3f3;
-    font-family: Arial, sans-serif;
-    padding: 10px; /* Reduced padding */
-}
-
-.container {
-    text-align: center;
-    padding: 20px 30px; /* Increased padding on the sides */
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 90%;
-    margin: 5px auto; /* Reduced top margin */
-}
-
-.logo {
-    max-width: 300px;
-    height: auto;
-    border-radius: 15px; /* Adjust the value as needed */
-    margin-top: 10px; /* Reduced margin */
-}
-
-h1 {
-    margin-top: 10px; /* Reduced margin */
-    font-size: 2.5em;
-    color: #333;
-}
-
-.tagline {
-    font-size: 1.5em;
-    color: #666;
-    margin-top: 10px;
-    font-style: italic; /* Optional: italicize the tagline for emphasis */
-}
-
-.coming-soon {
-    font-size: 1.2em;
-    color: #999;
-    margin-top: 10px; /* Reduced margin */
-    margin-bottom: 20px; /* Reduced margin */
-}
-
-h2 {
-    font-size: 1.8em;
-    color: #333;
-    margin-bottom: 20px; /* Space between the heading and form */
-}
-
-form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-label {
-    margin-top: 10px;
-    font-size: 1em;
-    color: #333;
-    align-self: flex-start; /* Align labels to the start */
-}
-
-input, textarea {
-    margin-top: 5px;
-    padding: 10px;
-    width: 100%;
-    max-width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-textarea {
-    resize: vertical; /* Allows vertical resizing */
-}
-
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #00b7c7; /* Teal color matching the logo */
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #008a9c; /* Slightly darker teal on hover */
-}
-
-#my-form-status {
-    margin-top: 20px;
-    font-size: 1em;
-    color: #333;
-}
-
-/* Media Queries */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    .tagline {
-        font-size: 1.2em;
-    }
-
-    .coming-soon {
-        font-size: 1em;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-
-    input, textarea {
-        max-width: 100%;
-    }
-
-    button {
-        padding: 10px;
-        font-size: 0.9em;
-    }
-}
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 800px;
-        padding: 30px 50px; /* Increased padding on the sides for larger screens */
-        margin-top: 10px; /* Adjusted top margin */
-    }
-
-    h1 {
-        font-size: 3em;
-    }
-
-    .tagline {
-        font-size: 2em;
-    }
-
-    .coming-soon {
-        font-size: 1.5em;
-    }
-
-    h2 {
-        font-size: 2em;
-    }
-
-    button {
-        font-size: 1.1em;
-    }
-}
-
-@media only screen and (max-width: 1125px) and (max-height: 2001px) {
-    body {
-        align-items: flex-start;
-    }
-
-    .container {
-        margin-top: 20px; /* Add some top margin for small screens */
-    }
-}
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("my-form-status");
+            var data = new FormData(event.target);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    status.innerHTML = "Thanks for your submission!";
+                    form.reset()
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                        } else {
+                            status.innerHTML = "Oops! There was a problem submitting your form"
+                        }
+                    })
+                }
+            }).catch(error => {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+            });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
+</body>
+</html>
