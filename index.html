@@ -4,19 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UrbanMosaic Labs | Crafting Digital Masterpieces</title>
-    <meta name="description" content="UrbanMosaic Labs is crafting digital masterpieces. Stay tuned for our launch!">
-    <meta name="keywords" content="web design, app development, digital design, coming soon, UrbanMosaic Labs">
     <link rel="stylesheet" href="styles.css">
     <!-- Cloudflare Turnstile script -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTQCN9CE8P"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WTQCN9CE8P');
-    </script>
 </head>
 <body>
     <div class="container">
@@ -26,22 +16,17 @@
         <p class="coming-soon">Coming Soon</p>
         <h2>Contact Us</h2>
         <form id="my-form" action="https://formspree.io/f/mleqyyyq" method="POST">
-            <label for="email">Email:</label>
-            <input id="email" type="email" name="email" required>
+            <label>Email:</label>
+            <input type="email" name="email" required>
             <br>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <label>Message:</label>
+            <textarea name="message" rows="4" required></textarea>
             <br>
             <!-- Cloudflare Turnstile widget with light theme -->
             <div class="cf-turnstile" data-sitekey="0x4AAAAAAAcJJeSkSfqQDtCx" data-theme="light"></div>
             <button id="my-form-button" type="submit">Submit</button>
             <p id="my-form-status"></p>
         </form>
-        <div class="social-media">
-            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
-            <a href="https://facebook.com/yourprofile" target="_blank">Facebook</a>
-            <a href="https://linkedin.com/yourprofile" target="_blank">LinkedIn</a>
-        </div>
     </div>
     <script>
         var form = document.getElementById("my-form");
