@@ -27,12 +27,13 @@
         <h2>Contact Us</h2>
         <form id="my-form" action="https://formspree.io/f/mleqyyyq" method="POST">
             <label for="email">Email:</label>
-            <input id="email" type="email" name="email" aria-label="Email" required>
+            <input id="email" type="email" name="email" required>
             <br>
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" aria-label="Message" required></textarea>
+            <textarea id="message" name="message" rows="4" required></textarea>
             <br>
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAAAcJJeSkSfqQDtCx" data-theme="light" aria-label="CAPTCHA"></div>
+            <!-- Cloudflare Turnstile widget with light theme -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAAcJJeSkSfqQDtCx" data-theme="light"></div>
             <button id="my-form-button" type="submit">Submit</button>
             <p id="my-form-status"></p>
         </form>
