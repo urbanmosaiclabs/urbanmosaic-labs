@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
     overflow: auto; /* Ensure the page is scrollable if necessary */
     background: #f3f3f3;
     font-family: Arial, sans-serif;
