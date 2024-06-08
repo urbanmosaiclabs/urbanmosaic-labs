@@ -94,7 +94,7 @@ button {
 }
 
 button:hover {
-    background-color: #008f8f;
+    background-color: #ffa500; /* Orange color on hover */
 }
 
 #my-form-status {
