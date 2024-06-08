@@ -111,9 +111,9 @@ button:hover {
     margin: 0 10px;
     text-decoration: none;
     color: #00a6a6;
-    font-size: 3em; /* Larger font size */
+    font-size: 6em; /* Larger font size */
     border: 2px solid #00a6a6; /* Border to create rounded square effect */
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px; /* Rounded square effect */
     display: inline-block;
     transition: color 0.3s, background-color 0.3s;
@@ -121,7 +121,7 @@ button:hover {
 
 .social-media a:hover {
     color: #fff;
-    background-color: #00a6a6;
+    background-color: #ffa500; /* Orange color on hover */
 }
 
 /* Responsive Design */
