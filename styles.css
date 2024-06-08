@@ -43,6 +43,7 @@ h1 {
     font-size: 1.2em;
     color: #999;
     margin-top: 20px;
+    margin-bottom: 30px; /* Added space between "Coming Soon" and the form */
 }
 
 form {
@@ -56,15 +57,21 @@ label {
     margin-top: 10px;
     font-size: 1em;
     color: #333;
+    align-self: flex-start; /* Align labels to the start */
 }
 
-input {
+input, textarea {
     margin-top: 5px;
     padding: 10px;
-    width: 80%;
+    width: 100%;
     max-width: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1em;
+}
+
+textarea {
+    resize: vertical; /* Allows vertical resizing */
 }
 
 button {
@@ -76,6 +83,7 @@ button {
     color: white;
     font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
