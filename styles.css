@@ -7,7 +7,7 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
     overflow: auto; /* Ensure the page is scrollable if necessary */
     background: #f3f3f3;
