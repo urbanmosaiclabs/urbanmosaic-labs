@@ -111,12 +111,17 @@ button:hover {
     margin: 0 10px;
     text-decoration: none;
     color: #00a6a6;
-    font-size: 1.5em; /* Adjust font size for visibility */
-    transition: color 0.3s;
+    font-size: 3em; /* Larger font size */
+    border: 2px solid #00a6a6; /* Border to create rounded square effect */
+    padding: 10px;
+    border-radius: 10px; /* Rounded square effect */
+    display: inline-block;
+    transition: color 0.3s, background-color 0.3s;
 }
 
-social-media a:hover {
-    color: #008f8f;
+.social-media a:hover {
+    color: #fff;
+    background-color: #00a6a6;
 }
 
 /* Responsive Design */
