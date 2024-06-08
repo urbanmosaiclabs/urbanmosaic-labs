@@ -69,47 +69,62 @@ label {
     margin-top: 10px;
     font-size: 1em;
     color: #333;
-    align-self: flex-start; /* Align labels to the start */
+    align-self: flex-start;
 }
 
-input, textarea {
-    margin-top: 5px;
-    padding: 10px;
+input, textarea, button {
     width: 100%;
-    max-width: 300px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1em;
 }
 
 textarea {
-    resize: vertical; /* Allows vertical resizing */
+    resize: vertical; /* Allow vertical resizing */
 }
 
 button {
-    margin-top: 20px;
-    padding: 10px 20px;
+    background-color: #00a6a6; /* Teal color to match the logo */
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    background-color: #00b7c7; /* Teal color matching the logo */
-    color: white;
-    font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #008a9c; /* Slightly darker teal on hover */
+    background-color: #008f8f;
 }
 
 #my-form-status {
-    margin-top: 20px;
-    font-size: 1em;
+    margin-top: 10px;
+    font-size: 0.9em;
     color: #333;
 }
 
-/* Media Queries */
-@media (max-width: 600px) {
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #00a6a6;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #008f8f;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 95%;
+    }
+
     h1 {
         font-size: 2em;
     }
@@ -125,51 +140,35 @@ button:hover {
     h2 {
         font-size: 1.5em;
     }
-
-    input, textarea {
-        max-width: 100%;
-    }
-
-    button {
-        padding: 10px;
-        font-size: 0.9em;
-    }
 }
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: 800px;
-        padding: 30px 50px; /* Increased padding on the sides for larger screens */
-        margin-top: 10px; /* Adjusted top margin */
-    }
-
-    h1 {
-        font-size: 3em;
-    }
-
-    .tagline {
-        font-size: 2em;
-    }
-
-    .coming-soon {
-        font-size: 1.5em;
-    }
-
-    h2 {
-        font-size: 2em;
-    }
-
-    button {
-        font-size: 1.1em;
-    }
-}
-
-@media only screen and (max-width: 1125px) and (max-height: 2001px) {
+@media only screen and (max-width: 375px) and (max-height: 2001px) {
     body {
         align-items: flex-start;
     }
 
     .container {
-        margin-top: 20px; /* Add some top margin for small screens */
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .logo {
+        max-width: 250px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    .coming-soon {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.2em;
     }
 }
