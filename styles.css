@@ -124,12 +124,16 @@ button:hover {
 .social-media .social-icon {
     width: 2.5em; /* Match the font-size of the other icons */
     height: auto;
-    filter: invert(1); /* Ensure the white icon is visible on any background */
-    transition: filter 0.3s;
+    fill: #00a6a6; /* Set the initial color */
+    transition: fill 0.3s;
 }
 
-.social-media .linktree-icon:hover {
-    filter: invert(0.5); /* Change filter on hover to match the color transition of other icons */
+.social-media a:hover .social-icon {
+    fill: #ffa500; /* Change the color on hover */
+}
+
+.social-media .linktree-icon {
+    filter: none; /* Remove the invert filter */
 }
 
 /* Responsive Design */
