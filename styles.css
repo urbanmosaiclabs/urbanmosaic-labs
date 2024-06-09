@@ -127,11 +127,13 @@ button:hover {
     background-color: #00a6a6;
     border-radius: 5px;
     padding: 5px;
-    transition: background-color 0.3s;
+    fill: #fff; /* Ensure the icon itself is white */
+    transition: background-color 0.3s, fill 0.3s;
 }
 
 .linktree-icon:hover {
     background-color: #ffa500;
+    fill: #fff;
 }
 
 /* Responsive Design */
