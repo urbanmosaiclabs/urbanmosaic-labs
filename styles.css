@@ -117,23 +117,8 @@ button:hover {
     transition: color 0.3s, background-color 0.3s;
 }
 
-.social-media a:hover {
+social-media a:hover {
     color: #ffa500;
-}
-
-.social-media .social-icon {
-    width: 2.5em; /* Match the font-size of the other icons */
-    height: auto;
-    fill: #00a6a6; /* Set the initial color */
-    transition: fill 0.3s;
-}
-
-.social-media a:hover .social-icon {
-    fill: #ffa500; /* Change the color on hover */
-}
-
-.social-media .linktree-icon {
-    filter: none; /* Remove the invert filter */
 }
 
 /* Responsive Design */
