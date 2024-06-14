@@ -122,7 +122,7 @@ button:hover {
 }
 
 .social-media img {
-    width: 2.5em; /* Adjust the size as needed */
+    width: 5vw; /* Adjust the size as needed */
     height: auto;
     padding: 10px;
     display: inline-block;
