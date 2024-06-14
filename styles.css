@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
     overflow: auto;
     background: #f3f3f3;
     font-family: Arial, sans-serif;
@@ -105,14 +105,21 @@ button:hover {
 
 .social-media {
     margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: baseline;
 }
 
 .social-media a {
     margin: 0 10px;
     text-decoration: none;
     color: #00a6a6;
-    font-size: 2.5em;
+    font-size: 45px;
     padding: 10px;
+    /* padding-bottom: 0px; */
     display: inline-block;
     transition: color 0.3s, background-color 0.3s;
 }
@@ -122,12 +129,13 @@ button:hover {
 }
 
 .linktree img {
-    width: 2em; /* Adjust width to make it smaller */
-    height: 2em; /* Adjust height to maintain aspect ratio */
+    width: 39.38px; /* Adjust width to make it smaller */
+    height: 40px; /* Adjust height to maintain aspect ratio */
     background-color: #00a6a6;
     border-radius: 5px;
     padding: 5px;
     object-fit: contain;
+    margin-bottom: -3px;
 }
 
 .linktree img:hover {
