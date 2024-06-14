@@ -126,11 +126,8 @@ button:hover {
     height: auto;
     padding: 10px;
     display: inline-block;
-}
-
-/* Override default color for Linktree icon */
-.social-media img[src*="linktree-white-icon.svg"] {
-    filter: brightness(0) invert(1); /* Adjust as needed */
+    fill-opacity: 100%
+    fill: #00a6a6
 }
 
 /* Responsive Design */
