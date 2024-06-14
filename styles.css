@@ -122,10 +122,74 @@ button:hover {
 }
 
 .social-media img {
-    width: 30px; /* Adjust the size as needed */
+    width: 2.5em; /* Adjust the size as needed */
     height: auto;
     padding: 10px;
     display: inline-block;
-    fill-opacity: 1.0
-    fill: #00a6a6; /* Set the fill color for SVG icons */
+}
+
+/* Override default color for Linktree icon */
+.social-media img[src*="linktree-white-icon.svg"] {
+    filter: brightness(0) invert(1); /* Adjust as needed */
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 95%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .tagline {
+        font-size: 1.2em;
+    }
+
+    .coming-soon {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 375px) and (max-height: 2001px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .container {
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .logo {
+        max-width: 250px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    .coming-soon {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* Added media query for specific dimensions */
+@media only screen and (max-width: 1125px) and (max-height: 2001px) {
+    body {
+        align-items: flex-start;
+    }
 }
