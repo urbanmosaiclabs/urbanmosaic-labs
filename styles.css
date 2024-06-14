@@ -121,19 +121,14 @@ button:hover {
     color: #ffa500;
 }
 
-.linktree-icon {
-    width: 40px;
-    height: 40px;
+.linktree {
     background-color: #00a6a6;
     border-radius: 5px;
     padding: 5px;
-    fill: #fff;
-    transition: background-color 0.3s, fill 0.3s;
 }
 
-.linktree-icon:hover {
+.linktree:hover {
     background-color: #ffa500;
-    fill: #fff;
 }
 
 /* Responsive Design */
