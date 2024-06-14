@@ -1,19 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var form = document.getElementById("my-form");
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("my-form");
+    const button = document.getElementById("my-form-button");
+    const status = document.getElementById("my-form-status");
 
     async function handleSubmit(event) {
         event.preventDefault();
-        var status = document.getElementById("my-form-status");
-        var data = new FormData(event.target);
-        var turnstileResponse = data.get('cf-turnstile-response');
-
-        if (!turnstileResponse) {
-            status.innerHTML = "Please complete the CAPTCHA challenge.";
-            return;
-        }
+        const data = new FormData(event.target);
+        button.disabled = true;
+        button.textContent = "Sending...";
 
         try {
-            let response = await fetch(event.target.action, {
+            const response = await fetch(event.target.action, {
                 method: form.method,
                 body: data,
                 headers: {
@@ -22,18 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             if (response.ok) {
-                status.innerHTML = "Thanks for your submission!";
+                status.textContent = "Thanks for your submission!";
                 form.reset();
             } else {
-                let result = await response.json();
-                if (result.errors) {
-                    status.innerHTML = result.errors.map(error => error.message).join(", ");
+                const responseData = await response.json();
+                if (responseData.errors) {
+                    status.textContent = responseData.errors.map(error => error.message).join(", ");
                 } else {
-                    status.innerHTML = "Oops! There was a problem submitting your form.";
+                    status.textContent = "Oops! There was a problem submitting your form. Please try again later.";
                 }
             }
         } catch (error) {
-            status.innerHTML = "Oops! There was a problem submitting your form.";
+            status.textContent = "Oops! There was a problem submitting your form. Please try again later.";
+        } finally {
+            button.disabled = false;
+            button.textContent = "Submit";
         }
     }
 
