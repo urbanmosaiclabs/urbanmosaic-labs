@@ -107,25 +107,3 @@ button:hover:not(:disabled) {
     height: 40px;
     vertical-align: middle;
 }
-
-/* Responsive Design */
-@media only screen and (max-width: 768px) {
-    .container {
-        max-width: 95%;
-    }
-    h1 {
-        font-size: 2em;
-    }
-    .tagline {
-        font-size: 1.2em;
-    }
-    .coming-soon {
-        font-size: 1em;
-    }
-    h2 {
-        font-size: 1.5em;
-    }
-    .social-media a {
-        font-size: 35px;
-    }
-}
