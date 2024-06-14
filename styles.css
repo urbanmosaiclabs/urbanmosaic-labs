@@ -126,5 +126,6 @@ button:hover {
     height: auto;
     padding: 10px;
     display: inline-block;
+    fill-opacity: 1
     fill: #00a6a6; /* Set the fill color for SVG icons */
 }
