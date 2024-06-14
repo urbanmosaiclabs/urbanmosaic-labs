@@ -127,6 +127,7 @@ button:hover {
     background-color: #00a6a6;
     border-radius: 5px;
     padding: 5px;
+    object-fit: contain; /* Ensure the SVG content fits within the dimensions */
 }
 
 .linktree img:hover {
