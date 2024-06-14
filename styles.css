@@ -122,10 +122,10 @@ button:hover {
 }
 
 .social-media img {
-    width: 5vw; /* Adjust the size as needed */
+    width: 30px; /* Adjust the size as needed */
     height: auto;
     padding: 10px;
     display: inline-block;
-    fill-opacity: 1
+    fill-opacity: 1.0
     fill: #00a6a6; /* Set the fill color for SVG icons */
 }
