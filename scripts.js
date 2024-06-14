@@ -2,12 +2,23 @@ document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("my-form");
     const button = document.getElementById("my-form-button");
     const status = document.getElementById("my-form-status");
+    const turnstileResponseField = document.getElementById("cf-turnstile-response");
 
     async function handleSubmit(event) {
         event.preventDefault();
         const data = new FormData(event.target);
         button.disabled = true;
         button.textContent = "Sending...";
+
+        // Get Turnstile response token
+        const turnstileToken = turnstile.getResponse();
+        if (!turnstileToken) {
+            status.textContent = "Please complete the Turnstile verification.";
+            button.disabled = false;
+            button.textContent = "Submit";
+            return;
+        }
+        turnstileResponseField.value = turnstileToken;
 
         try {
             const response = await fetch(event.target.action, {
@@ -21,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (response.ok) {
                 status.textContent = "Thanks for your submission!";
                 form.reset();
+                turnstile.reset(); // Reset Turnstile widget
             } else {
                 const responseData = await response.json();
                 if (responseData.errors) {
