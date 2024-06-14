@@ -9,7 +9,6 @@
 <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="2ebe787bf4a4caca50c91ba7-|49"></script>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-WTQCN9CE8P"></script>
 <script defer src="scripts.js"></script>
@@ -42,6 +41,7 @@ gtag('config', 'G-WTQCN9CE8P');
         <textarea id="message" name="message" rows="4" required></textarea>
         <br>
         <div class="cf-turnstile" data-sitekey="0x4AAAAAAAcJJeSkSfqQDtCx" data-theme="light"></div>
+        <input type="hidden" name="cf-turnstile-response" id="cf-turnstile-response">
         <button id="my-form-button" type="submit">Submit</button>
         <p id="my-form-status"></p>
     </form>
