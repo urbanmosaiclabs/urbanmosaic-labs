@@ -1,53 +1,42 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("my-form");
-    const button = document.getElementById("my-form-button");
-    const status = document.getElementById("my-form-status");
-    const turnstileResponseField = document.getElementById("cf-turnstile-response");
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('my-form');
+    var status = document.getElementById('my-form-status');
+    var button = document.getElementById('my-form-button');
 
-    async function handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
-        button.disabled = true;
-        button.textContent = "Sending...";
-
-        // Get Turnstile response token
-        const turnstileToken = turnstile.getResponse();
-        if (!turnstileToken) {
-            status.textContent = "Please complete the Turnstile verification.";
-            button.disabled = false;
-            button.textContent = "Submit";
-            return;
-        }
-        turnstileResponseField.value = turnstileToken;
-
-        try {
-            const response = await fetch(event.target.action, {
-                method: form.method,
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                status.textContent = "Thanks for your submission!";
-                form.reset();
-                turnstile.reset(); // Reset Turnstile widget
-            } else {
-                const responseData = await response.json();
-                if (responseData.errors) {
-                    status.textContent = responseData.errors.map(error => error.message).join(", ");
-                } else {
-                    status.textContent = "Oops! There was a problem submitting your form. Please try again later.";
-                }
-            }
-        } catch (error) {
-            status.textContent = "Oops! There was a problem submitting your form. Please try again later.";
-        } finally {
-            button.disabled = false;
-            button.textContent = "Submit";
-        }
+    function success() {
+        form.reset();
+        button.style = 'display: none ';
+        status.innerHTML = "Thanks!";
     }
 
-    form.addEventListener("submit", handleSubmit);
+    function error() {
+        status.innerHTML = "Oops! There was a problem.";
+    }
+
+    form.addEventListener('submit', function(ev) {
+        ev.preventDefault();
+        var data = new FormData(form);
+        var captchaResponse = document.querySelector('.cf-turnstile').turnstile.getResponse();
+        if (!captchaResponse) {
+            status.innerHTML = "Please complete the CAPTCHA.";
+            return;
+        }
+        data.append('cf-turnstile-response', captchaResponse);
+        ajax(form.method, form.action, data, success, error);
+    });
+
+    function ajax(method, url, data, success, error) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState !== XMLHttpRequest.DONE) return;
+            if (xhr.status === 200) {
+                success(xhr.response, xhr.responseType);
+            } else {
+                error(xhr.status, xhr.response, xhr.responseType);
+            }
+        };
+        xhr.send(data);
+    }
 });
