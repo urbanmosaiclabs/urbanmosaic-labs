@@ -121,13 +121,16 @@ button:hover {
     color: #ffa500;
 }
 
-.social-media img {
-    width: 2.5em; /* Adjust the size as needed */
+/* New styles for the custom Linktree icon */
+.linktree-icon {
+    width: 2.5em;
     height: auto;
     padding: 10px;
-    display: inline-block;
-    fill-opacity: 100%
-    fill: #00a6a6
+    transition: transform 0.3s;
+}
+
+.linktree-icon:hover {
+    transform: scale(1.1);
 }
 
 /* Responsive Design */
