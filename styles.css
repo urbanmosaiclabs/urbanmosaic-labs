@@ -122,12 +122,12 @@ button:hover {
 }
 
 .linktree img {
-    width: 2.5em;
-    height: 2.5em;
+    width: 2em; /* Adjust width to make it smaller */
+    height: 2em; /* Adjust height to maintain aspect ratio */
     background-color: #00a6a6;
     border-radius: 5px;
     padding: 5px;
-    object-fit: contain; /* Ensure the SVG content fits within the dimensions */
+    object-fit: contain;
 }
 
 .linktree img:hover {
