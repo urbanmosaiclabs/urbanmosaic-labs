@@ -113,28 +113,29 @@ button:hover {
 
 .social-media a {
     background-color: #00a6a6;
-    width: 20%;
-    padding: 10%;
+    width: 40px; /* Set a fixed width for the square */
+    height: 40px; /* Set a fixed height for the square */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     transition: background-color 0.3s;
+    text-decoration: none;
 }
 
 .social-media a:hover {
     background-color: #ffa500;
 }
 
-.social-media i, .social-media img {
+.social-media i {
     color: #fff;
     font-size: 1.5em;
     transition: color 0.3s;
 }
 
 .social-media .linktree img {
-    width: 100%;
-    height: 100%;
+    width: 20px; /* Adjust size to fit within the square */
+    height: 20px; /* Adjust size to fit within the square */
     object-fit: contain;
 }
 
